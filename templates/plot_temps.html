@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<body>
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+/* |safe needed to remove encoding issue with strings */
+var cities = {{cities|safe}};
+var temps = {{temps}};
+var barColors = ["red", "green","blue","orange","brown", "black", "magenta", "yellow", "pink"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: cities,
+    datasets: [{
+      backgroundColor: barColors,
+      data: temps
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Current temperatures in US cities"
+    }
+  }
+});
+</script>
+</body>
+</html>

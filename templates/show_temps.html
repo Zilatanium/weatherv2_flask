@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Current Temperatures</title>
+  </head>
+  <body>
+    <ul>
+      <h2> Current temperatures in US cities  </h2>
+      {% for city, temp in city_temps.items() %}
+        <li> {{city}} : {{temp}} </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
